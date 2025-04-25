@@ -21,7 +21,7 @@ const CreateBook = () => {
     setLoading(true);
 
     axios
-      .post('https://backend-service.onrender.com/books', data)
+      .post('https://book-store-react-node.onrender.com/books', data)
       .then(() => {
         setLoading(false);
         navigate('/');
