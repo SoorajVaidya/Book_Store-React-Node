@@ -13,8 +13,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Middleware
+// Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://book-store-react-node.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 
 
 
