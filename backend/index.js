@@ -14,13 +14,8 @@ const __dirname = path.dirname(__filename);
 
 // Middleware
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["http://localhost:5555", "http://localhost:5173","https://book-store-react-node.onrender.com"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["content-type"],
-  })
-);
+app.use(cors());
+
 
 
 app.use("/books", booksRoute);
