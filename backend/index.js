@@ -15,8 +15,19 @@ const __dirname = path.dirname(__filename);
 // Middleware
 // Middleware
 app.use(express.json());
+
+
+// Allow your frontend Render URL only
+const allowedOrigins = ['https://book-store-react-node.onrender.com'];
+
 app.use(cors({
-  origin: 'https://book-store-react-node.onrender.com',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
