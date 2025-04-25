@@ -14,7 +14,7 @@ const Home = () => {
   const [showType, setShowType] = useState('table');
   useEffect(() => {
     setLoading(true);
-    axios.get('https://backend-service.onrender.com/books')
+    axios.get('https://book-store-react-node.onrender.com/books')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
