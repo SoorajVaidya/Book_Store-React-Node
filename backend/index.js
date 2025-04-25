@@ -16,7 +16,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5555", "http://localhost:5173"],
+    origin: ["http://localhost:5555", "http://localhost:5173","https://book-store-react-node.onrender.com"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["content-type"],
   })
